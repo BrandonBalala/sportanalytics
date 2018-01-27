@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'GamesController@index');
+
+Route::get('/game/{gameId}', 'GamesController@game');
