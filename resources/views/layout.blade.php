@@ -91,11 +91,5 @@
                 </div>
             </div>
         </div>
-
-        <div class="games">
-            @foreach ($games as $game)
-                <div><img src="{{$game['TeamA']['DynamicLinks']['default-thumbnail']}}"/>{{$game['TeamA']['LocationName']}} {{$game['TeamA']['Name']}} vs. <img src="{{$game['TeamB']['DynamicLinks']['default-thumbnail']}}"/>{{$game['TeamB']['LocationName']}} {{$game['TeamB']['Name']}}</div>
-            @endforeach
-        </div>
     </body>
 </html>
