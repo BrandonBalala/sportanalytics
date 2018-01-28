@@ -1,0 +1,89 @@
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    height: 100vh;
+    margin: 0;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 84px;
+}
+
+.links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+
+.games {
+    margin: 0 auto;
+    float: initial;
+
+    .game {
+        font-size: 20px;
+        color: #333337;
+        background-color: #f0f0f0;
+        background: #fcfcfc;
+        border: solid 1px #f0f0f0;
+        display: block;
+        padding: 3px;
+        margin-bottom: 5px;
+
+       .team-info {
+           img {
+                height: 30px;
+           }
+
+           .name {
+                font-weight: 500;
+           }
+
+           .record {
+                font-size: 14px;
+           }
+
+           .score {
+                float: right;
+                font-weight: 500;
+            }
+       }
+
+        &:hover, &:focus {
+            text-decoration: none;
+        }
+    }
+}

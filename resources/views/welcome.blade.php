@@ -5,66 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>SportAnalytics</title>
 
-        <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/app.css"
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -94,12 +39,35 @@
             </div>
         </div>
         
-        <div class="games col-md-8 text-center">
+        <div class="col-md-8 games">
             @foreach ($games as $game)
-                <a href="/game/{{ $game["Id"] }}"><div><img src="{{$game['TeamA']['DynamicLinks']['default-thumbnail']}}"/>{{$game['TeamA']['LocationName']}} {{$game['TeamA']['Name']}} vs. <img src="{{$game['TeamB']['DynamicLinks']['default-thumbnail']}}"/>{{$game['TeamB']['LocationName']}} {{$game['TeamB']['Name']}}</div></a>
+                <a href="/game/{{ $game["Id"] }}" class="game">
+                    <div class="stats">
+                        <span class="time"></span>
+                    </div>
+                    <div class="teama">
+                        <div class="team-info">
+                            <img src="{{$game['TeamA']['DynamicLinks']['default-thumbnail']}}"/>
+                            <span class="name">{{$game['TeamA']['LocationName']}} {{$game['TeamA']['Name']}}</span>
+                            <span class="record">({{ $game['TeamAWinsLosses'] }})</span>
+                            <span class="score">{{ $game['TeamAFinalScore'] }}</span>
+                        </div>
+                    </div>
+                    <div class="teamb">
+                        <div class="team-info">
+                            <img src="{{$game['TeamB']['DynamicLinks']['default-thumbnail']}}"/>
+                            <span class="name">{{$game['TeamB']['LocationName']}} {{$game['TeamB']['Name']}}</span>
+                            <span class="record">({{ $game['TeamBWinsLosses'] }})</span>
+                            <span class="score">{{ $game['TeamBFinalScore'] }}</span>
+                        </div>
+                    </div>
+                </a>
             @endforeach
         </div>
 
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     </body>
 </html>
