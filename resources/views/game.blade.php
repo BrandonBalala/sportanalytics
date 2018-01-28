@@ -94,6 +94,7 @@
             </div>
         </div>
 
+
         <div class="game col-md-8 text-center">
             <div>
                 <img src="{{$game['TeamA']['DynamicLinks']['default-thumbnail']}}"/>{{$game['TeamA']['LocationName']}} {{$game['TeamA']['Name']}} vs. <img src="{{$game['TeamB']['DynamicLinks']['default-thumbnail']}}"/>{{$game['TeamB']['LocationName']}} {{$game['TeamB']['Name']}}
@@ -103,9 +104,50 @@
             </div>
         </div>
 
-        <div class="previous-games">
+        @if ($game['Status'] == 'PostEvent')
+            <div>
+                @if ($game['Winner'] == 'teamA')
+                    <p>The {{ $game['TeamA']['Name'] }} Won!</p>
+                @else
+                    <p>The {{ $game['TeamB']['Name'] }} Won!</p>
+                @endif
+            </div>
 
-        </div>
+            <div>
+                <span>{{ $game['TeamAFinalScore'] }}</span>
+                <span>{{ $game['TeamBFinalScore'] }}</span>
+            </div>
+
+            <div class="pointsPerQuarter col-md-8 text-center">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                        <th scope="col">Team</th>
+                        <th scope="col">1st Quarter</th>
+                        <th scope="col">2nd Quarter</th>
+                        <th scope="col">3rd Quarter</th>
+                        <th scope="col">4th Quarter</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">{{ $game['TeamA']['DisplayName'] }}</th>
+                        <td>{{ $game['TeamAPeriod1Score'] }}</td>
+                        <td>{{ $game['TeamAPeriod2Score'] }}</td>
+                        <td>{{ $game['TeamAPeriod3Score'] }}</td>
+                        <td>{{ $game['TeamAPeriod4Score'] }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">{{ $game['TeamB']['DisplayName'] }}</th>
+                        <td>{{ $game['TeamBPeriod1Score'] }}</td>
+                        <td>{{ $game['TeamBPeriod2Score'] }}</td>
+                        <td>{{ $game['TeamBPeriod3Score'] }}</td>
+                        <td>{{ $game['TeamBPeriod4Score'] }}</td>
+                        </tr>
+                    </tbody>
+                    </table>
+            </div>
+        @endif
 
 
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
