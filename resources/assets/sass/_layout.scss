@@ -34,8 +34,13 @@ html, body {
     text-align: center;
 }
 
-.title {
+.title a {
     font-size: 84px;
+    color: #636b6f;
+    
+     &:hover, &:focus {
+         text-decoration: none;
+     }
 }
 
 .caption {
@@ -47,6 +52,11 @@ html, body {
 .games-page .games {
     margin: 0 auto;
     float: initial;
+
+    .date {
+        font-size: 20px;
+        font-weight: 500;
+    }
 
     .game {
         font-size: 20px;
@@ -96,11 +106,20 @@ html, body {
         }
     }
 
+    .team-info .name {
+        font-weight: 500;
+    }
+
     .teama, .teamb {
         display: inline-block;
     }
 
+    .teama {margin-right: 10px;}
+    .teamb {margin-left: 10px;}
+
     .pointsPerQuarter {
+        display: grid;
+        float: initial;
         margin: 0 auto;
         max-width: 600px;
         border: solid 1px #ccc;

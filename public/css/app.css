@@ -8393,8 +8393,14 @@ body {
   text-align: center;
 }
 
-.title {
+.title a {
   font-size: 84px;
+  color: #636b6f;
+}
+
+.title a:hover,
+.title a:focus {
+  text-decoration: none;
 }
 
 .caption {
@@ -8406,6 +8412,11 @@ body {
 .games-page .games {
   margin: 0 auto;
   float: initial;
+}
+
+.games-page .games .date {
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .games-page .games .game {
@@ -8451,12 +8462,26 @@ body {
   margin-top: -20px;
 }
 
+.game-page .team-info .name {
+  font-weight: 500;
+}
+
 .game-page .teama,
 .game-page .teamb {
   display: inline-block;
 }
 
+.game-page .teama {
+  margin-right: 10px;
+}
+
+.game-page .teamb {
+  margin-left: 10px;
+}
+
 .game-page .pointsPerQuarter {
+  display: grid;
+  float: initial;
   margin: 0 auto;
   max-width: 600px;
   border: solid 1px #ccc;

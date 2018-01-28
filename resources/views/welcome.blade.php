@@ -3,6 +3,7 @@
 @section('content')
         <div class="games-page">
             <div class="col-md-10 games">
+                <span class="date">{{date('D, F d, Y', strtotime($date))}}</span>
                 @foreach ($games as $game)
                     <a href="/game/{{ $game["Id"] }}" class="game">
                         <div class="stats">

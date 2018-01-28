@@ -5,6 +5,7 @@
             <div class="game col-md-12">
                 <div class="game-stats">
                     <div class="stats">
+                        <div class="date">{{date('D, F d, Y', strtotime($game['StartTime']))}}</div>
                         @if ($game['Status'] == "PreEvent")
                             <span class="time">{{date('H:i e',strtotime($game['StartTime']))}}</span>
                         @else

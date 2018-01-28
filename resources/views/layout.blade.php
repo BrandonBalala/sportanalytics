@@ -26,7 +26,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    SportAnalytics
+                    <a href="/">SportAnalytics</a>
                 </div>
 
                 <span class="caption">A ConUHacksIII Project.</span>

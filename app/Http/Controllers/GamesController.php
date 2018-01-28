@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 class GamesController extends Controller
 {
     public function index() {
+        $date = date('Ymd');
+
         $client = new \GuzzleHttp\Client();
-        $response = $client->request("GET", "http://conu.astuce.media:9993/api/sports/basketball/matches?RoundId=14&MatchDate=20180129&LoadReferences=true&IncludeLinks=true&format=json");
+        $response = $client->request("GET", "http://conu.astuce.media:9993/api/sports/basketball/matches?RoundId=14&MatchDate=$date&LoadReferences=true&IncludeLinks=true&format=json");
 
         $games = json_decode($response->getBody(), true);
 
@@ -19,6 +21,7 @@ class GamesController extends Controller
         // }
         
         return view('welcome', [
+            'date' => $date,
             'games' => $games
         ]);
     }
