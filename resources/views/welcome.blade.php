@@ -65,6 +65,25 @@
             @endforeach
         </div>
 
+        <div>
+
+            <form method="GET" action="{{ route('showPrediction') }}">
+                <select name="teamA">
+                    @foreach ($teams as $team)
+                        <option value="{{ $team['﻿id'] }}">{{ $team['name'] }}</option>
+                    @endforeach
+                </select>
+                <select name="teamB">
+                    @foreach ($teams as $team)
+                        <option value="{{ $team['﻿id'] }}">{{ $team['name'] }}</option>
+                    @endforeach
+                </select> 
+                
+                {{ csrf_field() }}
+                <button type="submit" class="btn btn-default">Predict Winner</button>
+            </form>
+        </div>
+
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
