@@ -14,3 +14,5 @@
 Route::get('/', 'GamesController@index');
 
 Route::get('/game/{gameId}', 'GamesController@game');
+
+Route::get('/prediction', ['as' => 'showPrediction', 'uses' => 'GamesController@prediction']);
