@@ -8,7 +8,7 @@ class GamesController extends Controller
 {
     public function index() {
         $client = new \GuzzleHttp\Client();
-        $response = $client->request("GET", "http://conu.astuce.media:9993/api/sports/basketball/matches?RoundId=14&MatchDate=20180125&LoadReferences=true&IncludeLinks=true&format=json");
+        $response = $client->request("GET", "http://conu.astuce.media:9993/api/sports/basketball/matches?RoundId=14&MatchDate=20180129&LoadReferences=true&IncludeLinks=true&format=json");
 
         $games = json_decode($response->getBody(), true);
 
@@ -37,7 +37,7 @@ class GamesController extends Controller
         }*/
 
         $roundId = $game[0]['RoundId'];
-        $response = $client->request("GET", "http://conu.astuce.media/api/sports/basketball/matches?RoundId=$roundId&Status=PostEvent&format=json");
+        // $response = $client->request("GET", "http://conu.astuce.media/api/sports/basketball/matches?RoundId=$roundId&Status=PostEvent&format=json");
 
         // echo var_dump($response->getBody());
 

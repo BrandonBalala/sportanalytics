@@ -15,6 +15,9 @@ html, body {
     align-items: center;
     display: flex;
     justify-content: center;
+    background: url('/img/sportanalytics-bg.jpg');
+    background-position: center center;
+    background-size: cover;
 }
 
 .position-ref {
@@ -35,21 +38,13 @@ html, body {
     font-size: 84px;
 }
 
-.links > a {
+.caption {
     color: #636b6f;
-    padding: 0 25px;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 600;
-    letter-spacing: .1rem;
-    text-decoration: none;
-    text-transform: uppercase;
 }
 
-.m-b-md {
-    margin-bottom: 30px;
-}
-
-.games {
+.games-page .games {
     margin: 0 auto;
     float: initial;
 
@@ -61,7 +56,7 @@ html, body {
         border: solid 1px #f0f0f0;
         display: block;
         padding: 3px;
-        margin-bottom: 5px;
+        margin-bottom: 7px;
 
        .team-info {
            img {
@@ -85,5 +80,46 @@ html, body {
         &:hover, &:focus {
             text-decoration: none;
         }
+    }
+}
+
+.game-page {
+    .game {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    .stats {
+        .score {
+            font-size: 50px;
+            margin-top: -20px;
+        }
+    }
+
+    .teama, .teamb {
+        display: inline-block;
+    }
+
+    .pointsPerQuarter {
+        margin: 0 auto;
+        max-width: 600px;
+        border: solid 1px #ccc;
+    }
+}
+
+.footer {
+    margin-top: 25px;
+
+    .location {
+        background: url('/img/sportanalytics-location.jpg');
+        background-position: center center;
+        background-size: cover;
+        height: 350px;
+        width: 100%;
+    }
+
+    .info {
+        text-align: center;
+        padding: 5px 10px 20px 10px;
     }
 }
