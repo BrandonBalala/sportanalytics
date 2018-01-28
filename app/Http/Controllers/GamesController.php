@@ -12,11 +12,11 @@ class GamesController extends Controller
 
         $games = json_decode($response->getBody(), true);
 
-        /*foreach($games as $game) {
-            echo gettype($game['Id']);
-            echo var_dump($game);
-            break;
-        }*/
+        // foreach($games as $game) {
+        //     echo gettype($game['Id']);
+        //     echo var_dump($game);
+        //     break;
+        // }
         
         return view('welcome', [
             'games' => $games
@@ -29,15 +29,25 @@ class GamesController extends Controller
 
         $game = json_decode($response->getBody(), true);
 
-        echo var_dump($game);
+        // echo var_dump($game);
         /*foreach($games as $game) {
             echo gettype($game['Id']);
             echo var_dump($game);
             break;
         }*/
+
+        $roundId = $game[0]['RoundId'];
+        $response = $client->request("GET", "http://conu.astuce.media/api/sports/basketball/matches?RoundId=$roundId&Status=PostEvent&format=json");
+
+        // echo var_dump($response->getBody());
+
+        // $previous_games = json_decode($response->getBody(), true);
+
+
         
         return view('game', [
-            'game' => $game[0]
+            'game' => $game[0],
+            // 'previous_games' => $previous_games,
         ]);
     }
 }
